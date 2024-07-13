@@ -9,6 +9,7 @@ import (
 func main(){
   http.HandleFunc("/", home)
   http.HandleFunc("/route", route)
+  http.HandleFunc("/new", new_end)
 
   addr := "localhost:8080"
   log.Printf("Started server at %s", addr)
@@ -43,4 +44,9 @@ func route(w http.ResponseWriter, r *http.Request){
   message(w, "Hidden route found!\n")
 }
 
-
+func new_end(w http.ResponseWriter, r *http.Request){
+  if r.Method !=  "GET"{
+    http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+  }
+  message(w, "New End Point!\n")
+}
