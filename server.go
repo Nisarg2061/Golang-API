@@ -31,7 +31,7 @@ func message(w http.ResponseWriter, r_string string){
 }
 
 func home(w http.ResponseWriter, r *http.Request){
-  if r.Method != "GET"{
+  if r.Method != "POST"{
     http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
   }
   message(w, "Hello World!\n")  
