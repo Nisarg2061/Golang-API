@@ -51,3 +51,4 @@ func new_end(w http.ResponseWriter, r *http.Request){
   message(w, "New End Point!\n")
 }
 Hello World
+Hello World
